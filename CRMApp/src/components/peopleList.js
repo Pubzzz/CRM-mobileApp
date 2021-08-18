@@ -1,15 +1,15 @@
 import React from "react";
-import {StyleSheet,FlatList } from "react-native";
+import {StyleSheet,FlatList,View } from "react-native";
 import {connect} from 'react-redux';
-import peopleItem from './peopleItem';
+import PeopleItem from './peopleItem';
 
-class peopleList extends React.Component{
+class PeopleList extends React.Component{
     render(){
         return(
             <View style={styles.container}>
                 <FlatList 
                     data={this.props.people}
-                    renderItem={({item}) => <peopleItem people={item} />}
+                    renderItem={({item}) => <PeopleItem people={item} />}
                 />
             </View>
         )
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
 const mapStateToProps = state =>{
     return {people:state.people}
 }
-export default connect(mapStateToProps)(peopleList);
+export default connect(mapStateToProps)(PeopleList);

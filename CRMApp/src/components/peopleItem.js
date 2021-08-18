@@ -3,13 +3,13 @@ import { View,StyleSheet,Image,Text } from "react-native";
 import {connect} from 'react-redux';
 import {getTheme} from 'react-native-material-kit';
 import * as actions from '../actions';
-import { Icon } from "react-native-vector-icons/Icon";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
-const peopleItem = (props)=>{
+const PeopleItem = (props)=>{
         return(
             <View>
                 <Image/>
-                <Icon/>
+                <AntDesign/>
                 <Text>{props.people.firstName} {props.people.lastName}</Text>
                 <Text>{props.people.company}</Text>
             </View>
@@ -46,4 +46,4 @@ const theme = getTheme();
 const mapStateToProps = state =>{
     return {people:state.people}
 }
-export default connect(null,actions)(peopleItem);
+export default connect(null,actions)(PeopleItem);

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Platform,StyleSheet ,Text,View} from 'react-native';
+import { StyleSheet ,View} from 'react-native';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import reducers from '../reducers/peopleReducer';
-import peopleList from './peopleList';
+import PeopleList from './peopleList';
 
 
 const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
@@ -13,7 +13,7 @@ class App extends React.Component{
     return(
       <Provider store={store}>
         <View style={styles.container}>
-         <peopleList/>
+         <PeopleList/>
         </View>
       </Provider>
     )
