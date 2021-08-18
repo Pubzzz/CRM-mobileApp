@@ -3,13 +3,11 @@ import { View,StyleSheet,Image,Text } from "react-native";
 import {connect} from 'react-redux';
 import {getTheme} from 'react-native-material-kit';
 import * as actions from '../actions';
-import AntDesign from "react-native-vector-icons/AntDesign";
 
 const PeopleItem = (props)=>{
         return(
             <View>
                 <Image/>
-                <AntDesign/>
                 <Text>{props.people.firstName} {props.people.lastName}</Text>
                 <Text>{props.people.company}</Text>
             </View>
