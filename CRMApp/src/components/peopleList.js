@@ -4,6 +4,11 @@ import {connect} from 'react-redux';
 import PeopleItem from './peopleItem';
 
 class PeopleList extends React.Component{
+    static navigationOptions ={
+        tabBarIcon :({tintColor})=>(
+            <Icon name={'user'} size={50} color={tintColor}/>
+        )
+    }
     render(){
         return(
             <View style={styles.container}>
