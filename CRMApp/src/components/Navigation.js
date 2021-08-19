@@ -1,4 +1,5 @@
-import {createBottomTabNavigator,createAppContainer} from 'react-navigation';
+import {createAppContainer} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
 import PeopleList from './peopleList';
 import CompanyList from './CompanyList';
 import AddPerson from './AddPerson';
