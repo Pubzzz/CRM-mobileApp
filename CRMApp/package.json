@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "@react-native-community/toolbar-android": "0.1.0-rc.2",
+    "@react-navigation/native": "^6.0.2",
     "react": "17.0.1",
     "react-native": "0.64.2",
+    "react-native-gesture-handler": "^1.10.3",
     "react-native-material-kit": "^0.6.0-beta.1",
     "react-native-vector-icons": "^6.7.0",
+    "react-navigation": "^4.4.4",
     "react-redux": "^7.2.4",
     "redux": "^4.1.1",
     "thunk": "0.0.1"

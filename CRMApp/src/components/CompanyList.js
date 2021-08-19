@@ -1,5 +1,5 @@
 import React from "react";
-import {Text,View } from "react-native";
+import {Text,View,StyleSheet } from "react-native";
 import {connect} from 'react-redux';
 import * as actions from '../actions'
 import { Icon } from "react-native-vector-icons/EvilIcons";

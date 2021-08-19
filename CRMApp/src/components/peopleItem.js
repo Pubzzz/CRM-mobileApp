@@ -2,7 +2,7 @@ import React from "react";
 import { View,StyleSheet,Image,Text } from "react-native";
 import {connect} from 'react-redux';
 import {getTheme} from 'react-native-material-kit';
-// import * as actions from '../actions';
+import * as actions from '../actions';
 import Icon from 'react-native-vector-icons/EvilIcons';
 
 const PeopleItem = (props)=>{
@@ -22,14 +22,17 @@ const PeopleItem = (props)=>{
 const styles = StyleSheet.create({
     card:{
         marginTop:20,
+        flexWrap:'wrap',
+        justifyContent:'space-around',
     },
     title:{
+        left:80,
         top:20,
         fontSize:20,
     },
     image:{
-        height:80,
-        width:320,
+        height:100,
+        width:325,
     },
     action:{
         backgroundColor:'black',
