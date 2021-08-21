@@ -11,7 +11,7 @@
     {
         "id":2,
         "firstName":"Prabhashi",
-        "lastName":"Hettiarachchi",
+        "lastName":"Hetti",
         "phone":"555-555-2567",
         "company":"Linkedin",
         "project":"CRM project2",
@@ -19,7 +19,7 @@
     }, {
         "id":3,
         "firstName":"Okitha",
-        "lastName":"Ranasinghe",
+        "lastName":"Ranas",
         "phone":"555-555-7698",
         "company":"Linkedin",
         "project":"CRM project3",

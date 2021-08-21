@@ -8,12 +8,12 @@ import Icon from 'react-native-vector-icons/EvilIcons';
 const PeopleItem = (props)=>{
         return(
             <TouchableWithoutFeedback
-             onPress={()=>props.selectedPerson(props.people)}
+             onPress={()=>props.selectPerson(props.people)}
             >
                 <View style={styles.card}>
                 <Image 
-                source ={require('../images/background.jpg')}
-                style={styles.image}
+                    source ={require('../images/background.jpg')}
+                    style={styles.image}
                 />
                 <Icon name={'user'} size={100} style={styles.icon} />
                 <Text style={[theme.cardTitleStyle,styles.title]}>{props.people.firstName} {props.people.lastName}</Text>

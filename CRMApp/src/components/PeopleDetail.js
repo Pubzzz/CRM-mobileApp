@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state =>{
     return {
-        personSelected:state.personSelected
+        person:state.personSelected
     }
 }
 export default connect(mapStateToProps,actions)(PeopleDetail);

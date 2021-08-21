@@ -5,7 +5,7 @@ export const selectPerson=(peopleId) =>{
     };
 };
 
-export const nonPerson =()=>{
+export const noneSelected =()=>{
     return{
         type:'NON_SELECTED',
     };
