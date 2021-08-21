@@ -74,7 +74,7 @@ class AddPerson extends React.Component{
     }
 }
 
-mapStateToProps=state =>{
+const mapStateToProps=state =>{
     const{firstname,lastname,phone,email,company,project,notes} = state;
     return {firstname,lastname,phone,email,company,project,notes};
 }
