@@ -15,7 +15,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
                 tabBarLabel:'People',  
                 tabBarIcon: ({ tintColor }) => (  
                     <View>  
-                         <Icon name={'user'} size={50} color={tintColor}/>
+                         <Icon name={'home'} size={50} color={tintColor}/>
                     </View>),  
             }  
         },  
