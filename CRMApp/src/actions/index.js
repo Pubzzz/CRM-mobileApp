@@ -10,3 +10,49 @@ export const noneSelected =()=>{
         type:'NON_SELECTED',
     };
 };
+
+export const formUpdate =({prop,value})=>{
+    return{
+        type:'FORM_UPDATE',
+        payload:{prop,value}
+    };
+};
+
+export const createNewContact =({firstname,lastname,phone,email,company,project,notes})=>{
+    return(dispatch)=>{
+        fetch('http://192.168.1.6:3000/contact',{
+            method:"POST",
+            body:JSON.stringify({
+                "firstname":firstname,
+                "lastname":lastname,
+                "phone":phone,
+                "email":email,
+                "company":company,
+                "project":project,
+                "notes":notes,
+            }),
+            headers:{
+                "Accept":"application/json",
+                "Content-Type":"application/json"
+            }
+        })
+        .then((response)=>console.log(response))
+        .then(()=>{
+            dispatch({type:'NEW_CONTACT'});
+        })
+        .catch(error=>console.log(error))
+    };
+};
+
+export const loadInitialContacts=()=>{
+    return (dispatch)=>{
+        fetch('http://192.168.1.6:3000/contact')
+        .then((response)=> 
+        {
+            return response.JSON();})
+        .then((data)=>{
+            dispatch({type:'INITIAL_FETCH',payload:data})
+        })
+        .catch(error=>console.log(error))
+    };
+};

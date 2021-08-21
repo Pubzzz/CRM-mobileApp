@@ -10,7 +10,7 @@ class AddPerson extends React.Component{
 
         this.props.createNewContact({firstname,lastname,phone,email,company,project,notes});
 
-        this.props.navigation.navigate('PeopleList');
+        this.props.navigation.navigate('People');
     }
 
     render(){
@@ -66,7 +66,7 @@ class AddPerson extends React.Component{
                     />
                     <View style={styles.addButton}>
                     <Button
-                        title="ADD" color="#FFA500"/>
+                        title="ADD" color="#FFA500" onPress={this.onAddPress.bind(this)}/>
                     </View>
                </View>
            </ScrollView>

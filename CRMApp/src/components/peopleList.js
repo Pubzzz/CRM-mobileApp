@@ -3,8 +3,14 @@ import {StyleSheet,FlatList,View } from "react-native";
 import {connect} from 'react-redux';
 import PeopleItem from './peopleItem';
 import PeopleDetail from "./PeopleDetail";
+import {loadInitialContacts} from '../actions';
 
 class PeopleList extends React.Component{
+
+    UNSAFE_componentWillMount(){
+        this.props.loadInitialContacts();
+    }
+    
     render(){
             if(this.props.detailView === true){
                 return(
@@ -42,4 +48,4 @@ const mapStateToProps = state =>{
     detailView:state.detailView,
     }
 }
-export default connect(mapStateToProps)(PeopleList);
+export default connect(mapStateToProps,{loadInitialContacts})(PeopleList);
