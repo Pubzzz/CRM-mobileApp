@@ -4,6 +4,15 @@ import {connect} from 'react-redux';
 import * as actions from '../actions'
 
 class AddPerson extends React.Component{
+
+    onAddPress(){
+        const {firstname,lastname,phone,email,company,project,notes}=this.props;
+
+        this.props.createNewContact({firstname,lastname,phone,email,company,project,notes});
+
+        this.props.navigation.navigate('PeopleList');
+    }
+
     render(){
         return(
            <ScrollView showsVerticalScrollIndicator={false}>
@@ -12,36 +21,48 @@ class AddPerson extends React.Component{
                     <TextInput
                         style={styles.fieldStyles}
                         placeholder={'First Name'}
-                        
+                        value={this.props.firstname}
+                        onChangeText={value=>this.props.formUpdate({prop:'firstname',value})}
                     />
                      <TextInput
                         style={styles.fieldStyles}
                         placeholder={'Last Name'}
+                        value={this.props.lastname}
+                        onChangeText={value=>this.props.formUpdate({prop:'lastname',value})}
                        
                     />
                      <TextInput
                         Style={styles.fieldStyles}
                         placeholder={'Contact number'}
-                        
+                        value={this.props.phone}
+                        onChangeText={value=>this.props.formUpdate({prop:'phone',value})}
                     />
                      <TextInput
                         Style={styles.fieldStyles}
                         placeholder={'Email'}
+                        value={this.props.email}
+                        onChangeText={value=>this.props.formUpdate({prop:'email',value})}
                         
                     />
                      <TextInput
                         Style={styles.fieldStyles}
                         placeholder={'Company'}
+                        value={this.props.company}
+                        onChangeText={value=>this.props.formUpdate({prop:'company',value})}
                         
                     />
                      <TextInput
                         Style={styles.fieldStyles}
                         placeholder={'Project'}
+                        value={this.props.project}
+                        onChangeText={value=>this.props.formUpdate({prop:'project',value})}
                         
                     />
                      <TextInput
                         Style={styles.fieldStyles}
                         placeholder={'Notes'}
+                        value={this.props.notes}
+                        onChangeText={value=>this.props.formUpdate({prop:'notes',value})}
                     />
                     <View style={styles.addButton}>
                     <Button
@@ -53,6 +74,10 @@ class AddPerson extends React.Component{
     }
 }
 
+mapStateToProps=state =>{
+    const{firstname,lastname,phone,email,company,project,notes} = state;
+    return {firstname,lastname,phone,email,company,project,notes};
+}
 const styles = StyleSheet.create({
     form:{
         flex:1,
@@ -77,4 +102,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default connect(null,actions)(AddPerson);
+export default connect(mapStateToProps,actions)(AddPerson);
