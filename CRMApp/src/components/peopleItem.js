@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
     image:{
         height:100,
-        width:325,
+        width:350,
     },
     action:{
         backgroundColor:'black',
