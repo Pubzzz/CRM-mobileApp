@@ -5,27 +5,24 @@ import PeopleItem from './peopleItem';
 import PeopleDetail from "./PeopleDetail";
 
 class PeopleList extends React.Component{
-    renderInitialView(){
-        if(this.props.detailView === true){
-            return(
-                <PeopleDetail/>
-            )     
-        }
-        else{
-            return(
-                <FlatList 
-                data={this.props.people}
-                renderItem={({item}) => <PeopleItem people={item} />}
-            />
-            )
-        }
-    }
     render(){
-        return(
-            <View style={styles.container}>
-                {this.renderInitialView}
-            </View> 
-        )
+            if(this.props.detailView === true){
+                return(
+                    <View style={styles.container}>
+                        <PeopleDetail/>
+                    </View>
+                )
+            }
+            else{
+                return(
+                    <View style={styles.container}>
+                        <FlatList 
+                            data={this.props.people}
+                            renderItem={({item}) => <PeopleItem people={item} />}
+                            keyExtractor={(item,index)=>index.toString()}/>
+                    </View>   
+                )  
+            }
     }
 }
 

@@ -24,7 +24,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
                 tabBarLabel:'Add',  
                 tabBarIcon: ({ tintColor }) => (  
                     <View>  
-                       <Icon name={'plus'} size={50} color={tintColor}/>  
+                       <Icon name={'albums'} size={50} color={tintColor}/>  
                     </View>),  
                 activeColor: '#f60c0d',  
                 inactiveColor: '#f65a22',  
