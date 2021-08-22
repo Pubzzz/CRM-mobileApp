@@ -40,7 +40,7 @@ class DetailView extends React.Component{
                         <MaterialIcon name={'mode-edit'}size={40} style={styles.TextIcon} />
                         <Text style={theme.cardContentStyle}>{this.props.person.notes}</Text>
                     </View>
-                    <View style={styles.editArea}>
+                    <View style={styles.editDeleteArea}>
                         < TouchableOpacity style={styles.sections} onPress={()=>{this.updateTest();}}>
                             <MaterialIcon name={'autorenew'}size={40} style={styles.editIcon}/>
                             <Text style={theme.cardContentStyle}>EDIT</Text>
@@ -50,7 +50,7 @@ class DetailView extends React.Component{
                             <Text style={theme.cardContentStyle}>DELETE</Text>
                         </TouchableOpacity>
                     </View>
-                    <View>
+                    <View style={styles.actionArea}>
                         <TouchableOpacity>
                             <Image 
                             source={require('../images/call@2x.png.png')}
@@ -69,11 +69,11 @@ class DetailView extends React.Component{
                             style={styles.actionImage}
                             />
                         </TouchableOpacity>
-                        <View style={styles.actionArea}>
+                    </View>
+                    <View style={styles.actionArea}>
                             <Text>Call</Text>
                             <Text>Email</Text>
                             <Text>SMS</Text>
-                        </View>
                     </View>
                </ScrollView>
             </View>
@@ -104,15 +104,16 @@ const styles = StyleSheet.create({
     image:{
         flex:0,
         height:100,
-        width:333,
+        width:390,
         backgroundColor:'transparent',
         justifyContent:'center',
         alignItems:'center',
     },
     closeIcon:{
         position:'absolute',
-        top:-1,
-        left:260,
+        top:5,
+        left:325,
+        color:'red',
         
     },
     icon:{
@@ -137,6 +138,30 @@ const styles = StyleSheet.create({
         justifyContent:'space-around',
         alignItems:'center',
     },
+    editIcon:{
+        color:'#26a6e4',
+    },
+    sections:{
+        flexDirection:'row',
+        paddingLeft:10,
+        paddingTop:10,
+        width:100,
+    },
+    deleteIcon:{
+        color:'#e9869a',
+    },
+    editDeleteArea:{
+        flexDirection:'row',
+        paddingLeft:20,
+        justifyContent:'space-around',
+        alignItems:'center',
+        backgroundColor:'rgba(211,211,211,0.3)',
+        marginBottom:10,
+    },
+    actionImage:{
+        width:100,
+        height:100,
+    }
 })
 
 const mapStateToProps = state =>{
