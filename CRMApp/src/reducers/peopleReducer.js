@@ -1,3 +1,4 @@
+
 const initialState={
     people:[],
     detailView:false,
@@ -50,6 +51,12 @@ export default (state=initialState,action)=>{
             return{
                 ...state,
                 ...action.newPerson
+            }
+        case 'DELETE_CONTACT':
+            return{
+                ...state,
+                detailView:false,
+                personSelected:null,
             }
         default:
             return state;
