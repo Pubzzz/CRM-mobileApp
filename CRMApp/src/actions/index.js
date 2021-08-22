@@ -20,7 +20,7 @@ export const formUpdate =({prop,value})=>{
 
 export const createNewContact =({firstname,lastname,phone,email,company,project,notes})=>{
     return(dispatch)=>{
-        fetch('http://192.168.1.6:3000/contact',{
+         fetch('http://192.168.1.6:8081/contact',{
             method:"POST",
             body:JSON.stringify({
                 "firstname":firstname,
@@ -32,8 +32,8 @@ export const createNewContact =({firstname,lastname,phone,email,company,project,
                 "notes":notes,
             }),
             headers:{
-                "Accept":"application/json",
-                "Content-Type":"application/json"
+                "Accept":'application/json',
+                "Content-Type":'application/json'
             }
         })
         .then((response)=>console.log(response))
@@ -46,10 +46,10 @@ export const createNewContact =({firstname,lastname,phone,email,company,project,
 
 export const loadInitialContacts=()=>{
     return (dispatch)=>{
-        fetch('http://192.168.1.6:3000/contact')
-        .then((response)=> 
+        fetch('http://192.168.1.6:8081/contact')
+        .then((response)=>
         {
-            return response.JSON();})
+            return response.json();})
         .then((data)=>{
             dispatch({type:'INITIAL_FETCH',payload:data})
         })

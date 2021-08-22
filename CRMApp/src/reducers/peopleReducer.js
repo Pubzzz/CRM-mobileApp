@@ -1,5 +1,3 @@
-
-
 const initialState={
     people:[],
     detailView:false,

@@ -6,11 +6,9 @@ import PeopleDetail from "./PeopleDetail";
 import {loadInitialContacts} from '../actions';
 
 class PeopleList extends React.Component{
-
     UNSAFE_componentWillMount(){
         this.props.loadInitialContacts();
     }
-    
     render(){
             if(this.props.detailView === true){
                 return(
