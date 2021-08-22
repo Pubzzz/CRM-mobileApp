@@ -1,26 +1,48 @@
 import React from "react";
-import {Text,View,StyleSheet } from "react-native";
+import {FlatList,View,StyleSheet } from "react-native";
 import {connect} from 'react-redux';
-import * as actions from '../actions'
+import CompanyItem from './CompanyItem';
+import _ from 'lodash';
 
 class CompanyList extends React.Component{
     render(){
         return(
             <View style={styles.container}>
-              <Text>Comapny screen</Text>
+             <FlatList>
+                            data={this.props.companies}
+                            renderItem={({item}) => <CompanyItem companies={item} />}
+                            keyExtractor={(item,index)=>index.toString()}
+             </FlatList>
             </View>
         )
+    }
+}
+
+const mapStateToProps=state =>{
+    const people =state.people;
+    const companies=
+        _.chain(people)
+            .groupBy('company')
+            .map((value,key)=>{
+                return {
+                    company:key,
+                    names:value
+                }
+            })
+            .value();
+    return{
+        companies,
     }
 }
 
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        width:353,
         flexWrap:'wrap',
         paddingTop:20,
         paddingLeft:20,
+        backgroundColor:'#e5e5e5',
     }
 })
 
-export default connect(null,actions)(CompanyList);
+export default connect(mapStateToProps)(CompanyList);

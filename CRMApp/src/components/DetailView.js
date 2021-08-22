@@ -111,10 +111,9 @@ const styles = StyleSheet.create({
     },
     closeIcon:{
         position:'absolute',
-        top:5,
-        left:295,
-        color:'rgba(233,166,154,0.8)',
-        backgroundColor:'rgba(255,255,255,0)',
+        top:-1,
+        left:260,
+        
     },
     icon:{
         position:'absolute',

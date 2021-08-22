@@ -65,3 +65,34 @@ export const deleteContact =(id)=>{
         })
     }
 }
+export const updateContact =(person)=>{
+    return{
+        type:'UPDATE_CONTACT',
+        payload:person,
+    }
+}
+export const saveContact =({firstname,lastname,phone,email,company,project,notes,_id})=>{
+    return(dispatch)=>{
+        fetch('http://192.168.1.6:8081/contact/${_id}',{
+           method:"PUT",
+           body:JSON.stringify({
+               "firstname":firstname,
+               "lastname":lastname,
+               "phone":phone,
+               "email":email,
+               "company":company,
+               "project":project,
+               "notes":notes,
+           }),
+           headers:{
+               "Accept":'application/json',
+               "Content-Type":'application/json'
+           }
+       })
+       .then((response)=>console.log(response))
+       .then(()=>{
+           dispatch({type:'SAVE_CONTACT'});
+       })
+       .catch(error=>console.log(error))
+   };
+}

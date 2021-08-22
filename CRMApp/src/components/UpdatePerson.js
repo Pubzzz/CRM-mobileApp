@@ -14,7 +14,7 @@ class UpdatePerson extends React.Component{
     render(){
         return(
            <ScrollView showsVerticalScrollIndicator={false}>
-                <Text style={styles.Topic} >Add a New Contact</Text>
+                <Text style={styles.Topic} >Update Contact</Text>
                <View style={styles.form}>
                     <TextInput
                         style={styles.fieldStyles}
@@ -73,8 +73,8 @@ class UpdatePerson extends React.Component{
 }
 
 const mapStateToProps=state =>{
-    const{firstname,lastname,phone,email,company,project,notes} = state;
-    return {firstname,lastname,phone,email,company,project,notes};
+    const{firstname,lastname,phone,email,company,project,notes,_id} = state;
+    return {firstname,lastname,phone,email,company,project,notes,_id};
 }
 const styles = StyleSheet.create({
     form:{

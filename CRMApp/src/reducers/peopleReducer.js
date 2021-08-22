@@ -10,6 +10,8 @@ const initialState={
     company:'',
     project:'',
     notes:'',   
+    _id:'',
+    toUpdate:false,
 }
 export default (state=initialState,action)=>{
     switch(action.type){
@@ -57,6 +59,33 @@ export default (state=initialState,action)=>{
                 ...state,
                 detailView:false,
                 personSelected:null,
+            }
+        case 'UPDATE_CONTACT':
+            return{
+                ...state,
+                toUpdate:true,
+                firstname:action.payload.firstname,
+                lastname:action.payload.lastname,
+                phone:action.payload.phone,
+                email:action.payload.email,
+                company:action.payload.company,
+                project:action.payload.project,
+                notes:action.payload.notes,
+                _id:action.payload._id,
+            }
+        case 'SAVE_CONTACT':
+            return{   
+                    ...state,
+                    toUpdate:false,
+                    detailView:false,
+                    firstname:'',
+                    lastname:'',
+                    phone:'',
+                    email:'',
+                    company:'',
+                    project:'',
+                    notes:'', 
+                    _id:'',  
             }
         default:
             return state;
